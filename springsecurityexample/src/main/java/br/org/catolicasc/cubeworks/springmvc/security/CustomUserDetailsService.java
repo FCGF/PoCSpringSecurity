@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.org.catolicasc.cubeworks.springmvc.model.User;
 import br.org.catolicasc.cubeworks.springmvc.model.UserProfile;
-import br.org.catolicasc.cubeworks.springmvc.service.UserService;
+import br.org.catolicasc.cubeworks.springmvc.service.IUserService;
 
 @Service("customUserDetailsService")
 public class CustomUserDetailsService implements UserDetailsService{
@@ -24,11 +24,10 @@ public class CustomUserDetailsService implements UserDetailsService{
     static final Logger logger = LoggerFactory.getLogger(CustomUserDetailsService.class);
      
     @Autowired
-    private UserService userService;
+    private IUserService userService;
      
     @Transactional(readOnly=true)
-    public UserDetails loadUserByUsername(String ssoId)
-            throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String ssoId) throws UsernameNotFoundException {
         User user = userService.findBySSO(ssoId);
         logger.info("User : {}", user);
         if(user==null){

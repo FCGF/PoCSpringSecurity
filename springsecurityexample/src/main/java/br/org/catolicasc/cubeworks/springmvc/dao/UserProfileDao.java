@@ -4,8 +4,11 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
+
 import br.org.catolicasc.cubeworks.springmvc.model.UserProfile;
 
+@Repository("userProfileDao")
 public class UserProfileDao extends AbstractDao<Integer, UserProfile> implements IUserProfileDao {
 
 	@Override

@@ -20,7 +20,7 @@ import br.org.catolicasc.cubeworks.springmvc.converter.RoleToUserProfileConverte
  
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.websystique.springmvc")
+@ComponentScan(basePackages = "br.org.catolicasc.cubeworks.springmvc")
 public class AppConfig extends WebMvcConfigurerAdapter{
      
      

@@ -2,7 +2,7 @@ package br.org.catolicasc.cubeworks.springmvc.service;
 
 import java.util.List;
 
-import br.org.catolicasc.cubeworks.springmvc.dao.UserDao;
+import br.org.catolicasc.cubeworks.springmvc.dao.IUserDao;
 import br.org.catolicasc.cubeworks.springmvc.model.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService implements IUserService {
 
 	@Autowired
-    private UserDao dao;
+    private IUserDao dao;
  
     @Autowired
     private PasswordEncoder passwordEncoder;

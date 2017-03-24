@@ -7,7 +7,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
  
 import br.org.catolicasc.cubeworks.springmvc.model.UserProfile;
-import br.org.catolicasc.cubeworks.springmvc.service.UserProfileService;
+import br.org.catolicasc.cubeworks.springmvc.service.IUserProfileService;
  
 /**
  * A converter class used in views to map id's to actual userProfile objects.
@@ -18,7 +18,7 @@ public class RoleToUserProfileConverter implements Converter<Object, UserProfile
     static final Logger logger = LoggerFactory.getLogger(RoleToUserProfileConverter.class);
      
     @Autowired
-    UserProfileService userProfileService;
+    IUserProfileService userProfileService;
  
     /**
      * Gets UserProfile by Id

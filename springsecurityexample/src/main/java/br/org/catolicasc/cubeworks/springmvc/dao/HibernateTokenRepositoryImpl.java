@@ -17,8 +17,7 @@ import br.org.catolicasc.cubeworks.springmvc.model.PersistentLogin;
 
 @Repository("tokenRepositoryDao")
 @Transactional
-public class HibernateTokenRepositoryImpl extends AbstractDao<String, PersistentLogin>
-        implements PersistentTokenRepository {
+public class HibernateTokenRepositoryImpl extends AbstractDao<String, PersistentLogin> implements PersistentTokenRepository {
  
     static final Logger logger = LoggerFactory.getLogger(HibernateTokenRepositoryImpl.class);
  

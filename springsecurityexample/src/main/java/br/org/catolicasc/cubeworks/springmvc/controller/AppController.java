@@ -26,8 +26,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  
 import br.org.catolicasc.cubeworks.springmvc.model.User;
 import br.org.catolicasc.cubeworks.springmvc.model.UserProfile;
-import br.org.catolicasc.cubeworks.springmvc.service.UserProfileService;
-import br.org.catolicasc.cubeworks.springmvc.service.UserService;
+import br.org.catolicasc.cubeworks.springmvc.service.IUserProfileService;
+import br.org.catolicasc.cubeworks.springmvc.service.IUserService;
  
  
  
@@ -37,10 +37,10 @@ import br.org.catolicasc.cubeworks.springmvc.service.UserService;
 public class AppController {
  
     @Autowired
-    UserService userService;
+    IUserService userService;
      
     @Autowired
-    UserProfileService userProfileService;
+    IUserProfileService userProfileService;
      
     @Autowired
     MessageSource messageSource;
