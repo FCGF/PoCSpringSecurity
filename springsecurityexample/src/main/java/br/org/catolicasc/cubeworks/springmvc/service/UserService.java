@@ -35,9 +35,7 @@ public class UserService implements IUserService {
     }
  
     /*
-     * Since the method is running with Transaction, No need to call hibernate update explicitly.
-     * Just fetch the entity from db and update it with proper values within transaction.
-     * It will be updated in db once transaction ends. 
+     * Como estásendo utilizada uma transação, não é necessário chamar o método update. 
      */
     public void updateUser(User user) {
         User entity = dao.findById(user.getId());

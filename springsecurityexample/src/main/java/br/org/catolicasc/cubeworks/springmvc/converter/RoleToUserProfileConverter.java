@@ -10,7 +10,7 @@ import br.org.catolicasc.cubeworks.springmvc.model.UserProfile;
 import br.org.catolicasc.cubeworks.springmvc.service.IUserProfileService;
  
 /**
- * A converter class used in views to map id's to actual userProfile objects.
+ * Uma classe Converter utilizada para converter o id do usuário em um UserProfile
  */
 @Component
 public class RoleToUserProfileConverter implements Converter<Object, UserProfile>{
@@ -21,7 +21,7 @@ public class RoleToUserProfileConverter implements Converter<Object, UserProfile
     IUserProfileService userProfileService;
  
     /**
-     * Gets UserProfile by Id
+     * Retorna um UserProfile pelo id
      * @see org.springframework.core.convert.converter.Converter#convert(java.lang.Object)
      */
     public UserProfile convert(Object element) {

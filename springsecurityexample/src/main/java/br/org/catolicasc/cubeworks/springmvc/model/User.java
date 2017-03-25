@@ -21,9 +21,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Table(name="APP_USER")
 public class User implements Serializable{
  
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 5796401979537755793L;
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -143,10 +140,6 @@ public class User implements Serializable{
         return true;
     }
  
-    /*
-     * DO-NOT-INCLUDE passwords in toString function.
-     * It is done here just for convenience purpose.
-     */
     @Override
     public String toString() {
         return "User [id=" + id + ", ssoId=" + ssoId + ", password=" + password

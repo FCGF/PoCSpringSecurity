@@ -23,17 +23,14 @@ import br.org.catolicasc.cubeworks.springmvc.converter.RoleToUserProfileConverte
 @ComponentScan(basePackages = "br.org.catolicasc.cubeworks.springmvc")
 public class AppConfig extends WebMvcConfigurerAdapter{
      
-     
     @Autowired
     RoleToUserProfileConverter roleToUserProfileConverter;
      
- 
     /**
-     * Configure ViewResolvers to deliver preferred views.
+     * Configura os ViewResolvers do spring para retornarem as views desejadas.
      */
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
- 
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setViewClass(JstlView.class);
         viewResolver.setPrefix("/WEB-INF/views/");
@@ -42,7 +39,7 @@ public class AppConfig extends WebMvcConfigurerAdapter{
     }
      
     /**
-     * Configure ResourceHandlers to serve static resources like CSS/ Javascript etc...
+     * Configura os ResourceHandlers para servirem recursos estáticos
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -50,8 +47,8 @@ public class AppConfig extends WebMvcConfigurerAdapter{
     }
      
     /**
-     * Configure Converter to be used.
-     * In our example, we need a converter to convert string values[Roles] to UserProfiles in newUser.jsp
+     * Configura o Converter para ser utilizado.
+     * Neste exemplo ele é usado para convertir de id para UserProfile
      */
     @Override
     public void addFormatters(FormatterRegistry registry) {
@@ -60,7 +57,7 @@ public class AppConfig extends WebMvcConfigurerAdapter{
      
  
     /**
-     * Configure MessageSource to lookup any validation/error message in internationalized property files
+     * Configura o MessageSource para procurar por mensagens nos arquivos de configuração
      */
     @Bean
     public MessageSource messageSource() {
@@ -69,9 +66,7 @@ public class AppConfig extends WebMvcConfigurerAdapter{
         return messageSource;
     }
      
-    /**Optional. It's only required when handling '.' in @PathVariables which otherwise ignore everything after last '.' in @PathVaidables argument.
-     * It's a known bug in Spring [https://jira.spring.io/browse/SPR-6164], still present in Spring 4.1.7.
-     * This is a workaround for this issue.
+    /**Opcional. Usado quando tivermos '.' nas @PathVariables 
      */
     @Override
     public void configurePathMatch(PathMatchConfigurer matcher) {
