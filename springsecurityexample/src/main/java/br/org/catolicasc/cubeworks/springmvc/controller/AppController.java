@@ -92,7 +92,7 @@ public class AppController {
          
         userService.saveUser(user);
  
-        model.addAttribute("success", "User " + user.getFirstName() + " "+ user.getLastName() + " registered successfully");
+        model.addAttribute("success", "Usuário " + user.getFirstName() + " "+ user.getLastName() + " registrado com sucesso.");
         model.addAttribute("loggedinuser", getPrincipal());
 
         return "registrationsuccess";
@@ -124,7 +124,7 @@ public class AppController {
  
         userService.updateUser(user);
  
-        model.addAttribute("success", "User " + user.getFirstName() + " "+ user.getLastName() + " updated successfully");
+        model.addAttribute("success", "Usuário " + user.getFirstName() + " "+ user.getLastName() + " atualizado com sucesso.");
         model.addAttribute("loggedinuser", getPrincipal());
         return "registrationsuccess";
     }

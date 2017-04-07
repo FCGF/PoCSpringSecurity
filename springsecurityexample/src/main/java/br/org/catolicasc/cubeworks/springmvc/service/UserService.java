@@ -35,7 +35,7 @@ public class UserService implements IUserService {
     }
  
     /*
-     * Como estásendo utilizada uma transação, não é necessário chamar o método update. 
+     * Como está sendo utilizada uma transação, não é necessário chamar o método update. 
      */
     public void updateUser(User user) {
         User entity = dao.findById(user.getId());
